@@ -14,10 +14,10 @@
      </tr>
    </thead>
    <tbody>
-     <tr  *ngFor="let p of data">
+     <tr  *ngFor="let p of data ">
        <td>{{p.code}}</td>
        <td>{{p.titre}}</td>
-       <td> {{p.prixUnitaire}}</td>
+       <td> {{p.prixUnitaire | currency:"EUR":"symbol"}}</td>
      </tr>
 
    </tbody>
