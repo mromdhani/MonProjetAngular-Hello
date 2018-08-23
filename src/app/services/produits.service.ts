@@ -13,6 +13,20 @@ export class ProduitsService {
 
   constructor(private _Http: HttpClient ) {}
 
+  addProduit(produit: IProduit): Observable<any> {
+      return this._Http.post(this.URL, produit);
+  }
+
+  getProduitById(id: string): Observable<IProduit> {
+    console.log ('Appel du REST : ' + this.URL + id);
+    return this._Http.get<IProduit>(this.URL + id);
+
+    //  return   { code: 'BIDON FROM Service',
+    //              titre: 'BIDON Titre',
+    //              prixUnitaire: 123.45
+    //           };
+  }
+
   getProduits(): Observable<IProduit[]> {
 
     return this._Http.get<IProduit[]>(this.URL);
