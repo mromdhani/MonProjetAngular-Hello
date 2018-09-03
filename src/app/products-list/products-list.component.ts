@@ -11,10 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class ProductsListComponent implements OnInit {
 
-   data: IProduit[];
+  data: IProduit[];
 
    constructor( private _service: ProduitsService) { }  // Constructor injection
 
+   // Lifecycle hook
   ngOnInit() {
 
     this._service.getProduits().subscribe(
